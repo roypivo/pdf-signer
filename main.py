@@ -45,12 +45,12 @@ if 'success_msg' not in st.session_state:
 stamp_file = st.file_uploader("1. העלה את קובץ החותמת", type=["png", "jpg", "jpeg"])
 uploaded_pdfs = st.file_uploader("2. העלה מסמכי PDF לחתימה (ניתן לבחור כמה יחד)", type=["pdf"], accept_multiple_files=True)
 
-# תפריט צד לשינוי מידות ומיקום
+# תפריט צד לשינוי מידות ומיקום - עודכן לערכי ברירת המחדל החדשים
 st.sidebar.header("הגדרות מיקום וגודל החותמת")
-x_pos = st.sidebar.number_input("מיקום X (אופקי)", value=450)
+x_pos = st.sidebar.number_input("מיקום X (אופקי)", value=10)
 y_pos = st.sidebar.number_input("מיקום Y (אנכי)", value=700)
-stamp_width = st.sidebar.number_input("רוחב החותמת", value=100)
-stamp_height = st.sidebar.number_input("גובה החותמת", value=50)
+stamp_width = st.sidebar.number_input("רוחב החותמת", value=200)
+stamp_height = st.sidebar.number_input("גובה החותמת", value=200)
 
 # ביצוע החתימה רק בלחיצת כפתור
 if stamp_file and uploaded_pdfs:
