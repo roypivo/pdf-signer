@@ -28,8 +28,11 @@ def sign_single_pdf(pdf_bytes, stamp_bytes, x, y, width, height):
         page.insert_image(rect, stream=stamp_bytes)
     return doc.write()
 
+# --- הגדרת שם האתר בלשונית הדפדפן ---
+st.set_page_config(page_title="Automatic Signer", page_icon="📝")
+
 # --- כותרת האפליקציה ---
-st.title("מערכת חתימה אוטומטית ומבוזרת")
+st.title("Automatic Signer")
 st.write("העלה חותמת ומסמכים, קבע את המידות ולחץ על הכפתור כדי לחתום.")
 
 # אתחול משתני זיכרון במידה ואינם קיימים
@@ -100,3 +103,6 @@ if stamp_file and uploaded_pdfs:
                     mime="application/pdf",
                     key=f"dl_{item['name']}"  # מפתח ייחודי למניעת התנגשויות
                 )
+
+# --- חתימת יוצר בתחתית העמוד ---
+st.markdown("<br><br><br><div style='text-align: center; color: gray; font-size: 14px;'>made by roy pivonia</div>", unsafe_allow_html=True)
